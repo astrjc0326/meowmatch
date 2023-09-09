@@ -5,9 +5,9 @@ import LogIn from './components/LogIn';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
       <LogIn />
-    </View>
+    </>
   );
 }
 

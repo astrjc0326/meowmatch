@@ -10,7 +10,8 @@ export default function LogIn() {
       <LeftLogo style={styles.leftlogo}/>
       <LOGOSVG style={styles.logo}/>
       <Text style={styles.title}>MeowMatch</Text>
-      <Button title="Continue with Facebook"></Button>
+      <Button title="Continue with Facebook"
+      onPress={() => console.log('fb btn on click')}></Button>
       <br></br>
       <Button title="Use another Option"></Button>
     </View>
@@ -42,5 +43,5 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     top: "20%"
-  }
+  },
 });
