@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import LOGOSVG from "../assets/Logo";
 import RightLogo from "../assets/RightLogo";
 import LeftLogo from "../assets/LeftLogo";
