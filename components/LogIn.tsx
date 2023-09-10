@@ -3,7 +3,7 @@ import LOGOSVG from "../assets/Logo";
 import RightLogo from "../assets/RightLogo";
 import LeftLogo from "../assets/LeftLogo";
 
-export default function LogIn() {
+export default function LogIn({ setPage }) {
   return (
     <View style={styles.container}>
       <RightLogo style={styles.rightlogo}/>
@@ -16,7 +16,7 @@ export default function LogIn() {
         <Text style={styles.fbbtntext}>Continue with Facebook</Text>
       </TouchableOpacity>
       <br></br>
-      <TouchableOpacity style={styles.otherbtn}>
+      <TouchableOpacity style={styles.otherbtn} onPress={() =>setPage('mobileLogin')}>
         <Text style={styles.otheroption}>Use Mobile number</Text>
       </TouchableOpacity>
       <Text style={styles.announce}>Don't worry! We never post to Facebook.</Text>
