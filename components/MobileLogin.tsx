@@ -19,7 +19,7 @@ export default function MobileLogin( {setpage}: any ) {
         </View>
       </View>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.btnText}>Continue</Text>
+        <Text style={styles.btnText} onPress={() => setpage("introduce")}>Continue</Text>
       </TouchableOpacity>
     </View>
   )
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     top: "8%",
     color: "#b0c5c5",
     fontSize: 25,
-    fontWeight: "500"
+    fontWeight: "600"
   },
   countrycode: {
     color: "#6a6767",
