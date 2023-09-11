@@ -1,37 +1,41 @@
+import React, {Component, useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Svg, {Circle} from 'react-native-svg';
 import LOGOSVG from "../assets/Logo";
 import RightLogo from "../assets/RightLogo";
 import LeftLogo from "../assets/LeftLogo";
 
-export default function LogIn({ setPage }) {
-  return (
-    <View style={styles.container}>
-      <RightLogo style={styles.rightlogo}/>
-      <LeftLogo style={styles.leftlogo}/>
-      <LOGOSVG style={styles.logo}/>
-      <Text style={styles.title}>MeowMatch</Text>
-      <View style={styles.login}>
-      <TouchableOpacity
-      style={styles.fbbtn} onPress={() => console.log('fb btn on click')}>
-        <Text style={styles.fbbtntext}>Continue with Facebook</Text>
-      </TouchableOpacity>
-      <br></br>
-      <TouchableOpacity style={styles.otherbtn} onPress={() =>setPage('mobileLogin')}>
-        <Text style={styles.otheroption}>Use Mobile number</Text>
-      </TouchableOpacity>
-      <Text style={styles.announce}>Don't worry! We never post to Facebook.</Text>
-      <View style={styles.row}>
-      <TouchableOpacity style={styles.row}>
-      <Text style={styles.term}>Terms of Service</Text>
-      </TouchableOpacity>
-      <Text>  </Text>
-      <TouchableOpacity>
-      <Text style={styles.term}>Privacy Policy</Text>
-      </TouchableOpacity>
+
+
+export default function LogIn ({setpage}: any) {
+    return (
+      <View style={styles.container}>
+        <RightLogo style={styles.rightlogo}/>
+        <LeftLogo style={styles.leftlogo}/>
+        <LOGOSVG style={styles.logo}/>
+        <Text style={styles.title}>MeowMatch</Text>
+        <View style={styles.login}>
+        <TouchableOpacity
+        style={styles.fbbtn} onPress={() => console.log('fb btn on click')}>
+          <Text style={styles.fbbtntext}>Continue with Facebook</Text>
+        </TouchableOpacity>
+        {/* <br></br> */}
+        <TouchableOpacity style={styles.otherbtn} onPress={() => {setpage('mobilelogin')}}>
+          <Text style={styles.otheroption}>Use Mobile number</Text>
+        </TouchableOpacity>
+        <Text style={styles.announce}>Don't worry! We never post to Facebook.</Text>
+        <View style={styles.row}>
+        <TouchableOpacity style={styles.row}>
+        <Text style={styles.term}>Terms of Service</Text>
+        </TouchableOpacity>
+        <Text>  </Text>
+        <TouchableOpacity>
+        <Text style={styles.term}>Privacy Policy</Text>
+        </TouchableOpacity>
+        </View>
       </View>
-    </View>
-    </View>
-  );
+      </View>
+    );
 }
 
 const styles = StyleSheet.create({

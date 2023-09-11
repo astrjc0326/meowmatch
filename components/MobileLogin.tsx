@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
 
-export default function MobileLogin({setPage}) {
+
+
+export default function MobileLogin( {setpage}: any ) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.exitbtn} onPress={() => setPage('homelogin')}>
+      <TouchableOpacity style={styles.exitbtn} onPress={() => {setpage('homelogin')}}>
         <Text style={styles.exittext}>X</Text>
       </TouchableOpacity>
 

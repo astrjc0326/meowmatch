@@ -1,18 +1,25 @@
+import React, {Component} from 'react';
+import { SafeAreaView } from 'react-native';
+
 import { useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import LogIn from './components/LogIn';
 import MobileLogin from './components/MobileLogin';
 
-export default function App() {
-  const [page, setPage] = useState('homelogin');
-  const currPage = page === 'homelogin' ?  <LogIn setPage={setPage} /> : page === "mobileLogin" ? <MobileLogin setPage={setPage}/> : ''
+
+export default function App () {
+  const [page, setpage] = useState<string>('homelogin');
   useEffect(() => {}, [page])
-  return (
+  const currPage = page === 'homelogin' ?  <LogIn setpage={setpage}/> : page === 'mobilelogin' ? <MobileLogin setpage={setpage}/> : <LogIn  setpage={setpage}/>
+  useEffect(() => {
+
+  }, [page, setpage])
+    return (
     <>
-      { currPage }
+      {currPage}
     </>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
