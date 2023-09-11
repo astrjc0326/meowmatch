@@ -6,12 +6,24 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import LogIn from './components/LogIn';
 import MobileLogin from './components/MobileLogin';
+import Introduce from './components/Introduce';
 
 
 export default function App () {
   const [page, setpage] = useState<string>('homelogin');
   useEffect(() => {}, [page])
-  const currPage = page === 'homelogin' ?  <LogIn setpage={setpage}/> : page === 'mobilelogin' ? <MobileLogin setpage={setpage}/> : <LogIn  setpage={setpage}/>
+  let currPage = <LogIn setpage={setpage}/>
+  switch(page) {
+    case ("homelogin"):
+      currPage = <LogIn setpage={setpage}/>
+      break;
+    case ("mobilelogin"):
+      currPage = <MobileLogin setpage={setpage}/>
+      break;
+    case ("introduce"):
+      currPage = <Introduce setpage={setpage}/>
+      break;
+  }
   useEffect(() => {
 
   }, [page, setpage])
