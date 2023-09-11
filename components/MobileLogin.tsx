@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   btnText: {
     fontWeight: "600",
     borderRadius: 30,
-    marginVertical: 15,
-    marginHorizontal: 150,
+    paddingVertical: 15,
+    paddingHorizontal: 150,
   },
   phoneviewcontainer: {
     // position: "absolute",
