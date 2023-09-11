@@ -1,6 +1,5 @@
 import React, {Component, useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Svg, {Circle} from 'react-native-svg';
 import LOGOSVG from "../assets/Logo";
 import RightLogo from "../assets/RightLogo";
 import LeftLogo from "../assets/LeftLogo";
@@ -46,11 +45,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
+    alignContent: "center",
+    textAlign: "center",
+    width: "90%",
+    padding: "1%",
     color: "#b0c5c5",
-    fontSize: 60,
+    fontSize: 55,
     fontWeight: "700",
     position: "absolute",
-    top: "30%"
+    top: "35%"
   },
   logo: {
     position: "absolute",
@@ -86,6 +89,7 @@ const styles = StyleSheet.create({
   fbbtn: {
     // position: "absolute",
     // bottom: "30%",
+    width: "95%",
     backgroundColor:'#e8e5e5',
     borderRadius: 30,
     marginTop: 30,
