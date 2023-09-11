@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-nativ
 export default function Introduce ({setpage}: any) {
   return (
     <View style={styles.container}>
+
       <Text style={styles.title}>Introduce yourself!</Text>
       <Text style={styles.description}>Fill out the rest of your details so meows know a little more about you.</Text>
       <Text style={styles.identify}>I identify as a ....</Text>
@@ -17,11 +18,13 @@ export default function Introduce ({setpage}: any) {
       <TextInput placeholder='MM/DD/YYYY' keyboardType="numeric" placeholderTextColor="#DEDADA" maxLength={8} style={styles.input}></TextInput>
     <Text style={styles.identify}>Name</Text>
     <TextInput placeholder='Add your first name' placeholderTextColor="#DEDADA" maxLength={20} style={styles.input}>
-
     </TextInput>
+
+
     <TouchableOpacity style={styles.btn}>
       <Text style={styles.btntxt}>Continue</Text>
     </TouchableOpacity>
+
     </View>
   )
 }
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignContent: "space-between",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     marginHorizontal: 30,
     marginTop: 30,
     marginBottom: 70
@@ -39,13 +42,12 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     alignContent: "center",
-    // position: "absolute",
-    // top: "10%",
     width: "100%",
     color: "#b0c5c5",
     fontSize: 25,
     fontWeight: "600",
-    marginVertical: "5%"
+    marginVertical: "5%",
+    paddingTop: "2%"
   },
   description: {
     // position: "absolute",
@@ -70,7 +72,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderColor: "#6a6767",
     borderWidth: 0.5,
-    borderRadius: 10
+    borderRadius: 10,
+    marginVertical: 3
   },
   input: {
     height: 50,
@@ -87,6 +90,7 @@ const styles = StyleSheet.create({
     alignContent: "center",
     backgroundColor: "#e9f5f5",
     borderRadius: 30,
+    marginTop: "3%"
   },
   btntxt: {
     width: "100%",
