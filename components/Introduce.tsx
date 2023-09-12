@@ -1,27 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 
 export default function Introduce ({setpage}: any) {
+  const [isMonPress, setisMonPress] = useState<Boolean>(false);
+  const [isFonPress, setisFonPress] = useState<Boolean>(false);
+  let onMpressStyle = isMonPress ? styles.optionbtnOnPress : styles.optionbtn;
+  let onFpressSytle = isFonPress ? styles.optionbtnOnPress : styles.optionbtn;
+  useEffect(() => {}, [isMonPress])
   return (
     <View style={styles.container}>
 
       <Text style={styles.title}>Introduce yourself!</Text>
       <Text style={styles.description}>Fill out the rest of your details so meows know a little more about you.</Text>
       <Text style={styles.identify}>I identify as a ....</Text>
-      <TouchableOpacity style={styles.optionbtn}>
+      <TouchableOpacity style={onFpressSytle} onPress={() => { setisFonPress(true);
+        setisMonPress(false)}}
+        >
         <Text style={styles.optiontxt}>Femeow</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.optionbtn}>
+      <TouchableOpacity style={onMpressStyle} onPress={() => { setisMonPress(true);
+      setisFonPress(false)}}
+      >
         <Text style={styles.optiontxt}>Meow</Text>
       </TouchableOpacity>
     <Text style={styles.identify}>Birthday</Text>
-      <TextInput placeholder='MM/DD/YYYY' keyboardType="numeric" placeholderTextColor="#DEDADA" maxLength={8} style={styles.input}></TextInput>
+      <TextInput placeholder='MM/DD/YYYY' keyboardType='numeric' placeholderTextColor='#DEDADA' maxLength={8} style={styles.input}></TextInput>
     <Text style={styles.identify}>Name</Text>
     <TextInput placeholder='Add your first name' placeholderTextColor="#DEDADA" maxLength={20} style={styles.input}>
     </TextInput>
 
 
-    <TouchableOpacity style={styles.btn}>
+    <TouchableOpacity style={styles.btn} onPress={() => setpage("addphoto")}>
       <Text style={styles.btntxt}>Continue</Text>
     </TouchableOpacity>
 
@@ -75,6 +84,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 3
   },
+  optionbtnOnPress: {
+    paddingVertical: 6,
+    paddingHorizontal: 8,
+    backgroundColor: "#e9f5f5",
+    borderColor: "#e9f5f5",
+    borderWidth: 0.5,
+    borderRadius: 10,
+    marginVertical: 3,
+  }
+  ,
   input: {
     height: 50,
     fontSize: 20,
