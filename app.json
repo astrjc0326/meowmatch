@@ -1,6 +1,14 @@
 {
   "expo": {
     "name": "meowmatch",
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Meowmatch to access your camera."
+        }
+      ]
+    ],
     "slug": "meowmatch",
     "version": "1.0.0",
     "orientation": "portrait",
