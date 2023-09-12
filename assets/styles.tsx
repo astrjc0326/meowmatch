@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -69,7 +69,31 @@ const styles = StyleSheet.create({
     color: "#b0c5c5",
     fontWeight: "500",
     marginTop: 40
-  }
+  },
+  btn: {
+    width: "100%",
+    alignContent: "center",
+    backgroundColor: "#e9f5f5",
+    borderRadius: 30,
+    marginTop: "3%"
+  },
+  btntxt: {
+    width: "100%",
+    fontWeight: "600",
+    textAlign: "center",
+    borderRadius: 30,
+    marginVertical: 15,
+  },
+   description: {
+    // position: "absolute",
+    // top: "18%",
+    color: "#6a6767",
+    marginVertical: "2%",
+    fontSize: 17,
+    textAlign: "center"
+  },
+
+
 });
 
 export default styles;
