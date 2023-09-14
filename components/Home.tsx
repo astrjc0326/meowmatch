@@ -6,27 +6,72 @@ import styles from '../assets/styles';
 import Swipcaticon from '../assets/Swipcaticon';
 import Chaticon from '../assets/Chaticon';
 import Love from '../assets/Love';
+import SwipCats from './SwipCats';
+import Chat from './Chat';
+import Like from './Like';
 
 export default function Home() {
-  const [profileonclick, profilesetonclick] = useState(false);
+  const [page, setPage] = useState('profile')
+  const [profileonclick, profilesetonclick] = useState(true);
+  const [swiponclick, swipsetonclick] = useState(false);
+  const [chatonclick, chatsetonclick] = useState(false);
+  const [likeonclick, likesetonclick] = useState(false);
   useEffect(()=>{}, [profileonclick])
-  const currpage = <Profile />
+  let currpage = <Profile />
+
+  switch(page) {
+    case("profile"):
+      currpage = <Profile />
+      break;
+    case("swip"):
+      currpage= <SwipCats />
+      break;
+    case("chat"):
+      currpage=<Chat />
+      break;
+    case("like"):
+      currpage=<Like />
+  }
   return(
     <View style={styles.container}>
       {currpage}
     <View style={{...stylesheet.row, ...stylesheet.footer}}>
-      <TouchableOpacity style={stylesheet.svg}>
-        <Profileicon />
+      <TouchableOpacity style={stylesheet.svg} onPress={()=>{
+        setPage('profile');
+        profilesetonclick(true);
+        swipsetonclick(false);
+        chatsetonclick(false);
+        likesetonclick(false);
+      }}>
+        <Profileicon color={profileonclick ? '#CBEEEE' : '#D9D9D9'}/>
       </TouchableOpacity>
-      <TouchableOpacity style={stylesheet.svg}>
-        <Swipcaticon />
+      <TouchableOpacity style={stylesheet.svg} onPress={() => {
+        setPage('swip')
+        profilesetonclick(false);
+        swipsetonclick(true);
+        chatsetonclick(false);
+        likesetonclick(false);
+      }}>
+        <Swipcaticon color={swiponclick ? '#CBEEEE' : '#D9D9D9'}/>
       </TouchableOpacity>
-      <TouchableOpacity style={stylesheet.svg}>
+      <TouchableOpacity style={stylesheet.svg} onPress={() => {
+        setPage('chat')
+        profilesetonclick(false);
+        swipsetonclick(false);
+        chatsetonclick(true);
+        likesetonclick(false);
+      }}>
         <View style={stylesheet.paddingtop}></View>
-        <Chaticon />
+        <Chaticon color={chatonclick ? '#CBEEEE' : '#D9D9D9'}/>
       </TouchableOpacity>
-      <TouchableOpacity style={stylesheet.svg}>
-        <Love />
+      <TouchableOpacity style={stylesheet.svg} onPress={() => {
+        setPage('like')
+        profilesetonclick(false);
+        swipsetonclick(false);
+        chatsetonclick(false);
+        likesetonclick(true);
+      }}>
+        <Love color={likeonclick ? '#CBEEEE' : '#D9D9D9'}/>
       </TouchableOpacity>
 
     </View>
