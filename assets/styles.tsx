@@ -92,6 +92,12 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: "center"
   },
+  flex1: {
+    flex:1
+  },
+  flex2: {
+    flex:2
+  }
 
 
 });
