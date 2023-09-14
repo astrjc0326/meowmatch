@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { Ellipse, Path } from "react-native-svg"
 
-function SvgComponent(props: any) {
+function SvgComponent({color}: any) {
   return (
     <Svg
       width={56}
@@ -9,10 +9,10 @@ function SvgComponent(props: any) {
       viewBox="0 0 56 51"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      // {...props}
     >
-      <Ellipse cx={28} cy={25.3474} rx={28} ry={25.3474} fill="#CBEEEE" />
-      <Ellipse cx={28} cy={25.3474} rx={28} ry={25.3474} fill="#CBEEEE" />
+      <Ellipse cx={28} cy={25.3474} rx={28} ry={25.3474} fill={`${color}`}/>
+      <Ellipse cx={28} cy={25.3474} rx={28} ry={25.3474} fill={color} />
       <Path
         d="M47.318 7.477l-1.587 10.54-8.333-6.645 9.92-3.895zM8.826 7.624l10.224 3.262-9.529 7.448-.695-10.71z"
         fill="#fff"
