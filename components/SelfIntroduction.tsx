@@ -2,7 +2,7 @@ import React from 'react';
 import {View, TouchableOpacity, Text, TextInput, StyleSheet} from 'react-native';
 import styles from '../assets/styles'
 
-export default function SelfIntroduction({setpage}: any) {
+export default function SelfIntroduction({navigation}: any) {
   return (
   <View style={stylesheet.container}>
     <Text style={{...stylesheet.heading}}>Introduce Yourself</Text>
@@ -11,11 +11,11 @@ export default function SelfIntroduction({setpage}: any) {
     multiline={true}
     numberOfLines={5}/>
     <TouchableOpacity style={styles.btn}>
-      <Text style={styles.btntxt} onPress={() => setpage('home')}>
+      <Text style={styles.btntxt} onPress={() => navigation.navigate('Home')}>
         Continue
       </Text>
     </TouchableOpacity>
-    <TouchableOpacity style={styles.btn} onPress={() => setpage('home')}>
+    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Home')}>
       <Text style={styles.btntxt}>
         Skip
       </Text>

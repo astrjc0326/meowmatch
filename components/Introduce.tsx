@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 
-export default function Introduce ({setpage}: any) {
+export default function Introduce ({navigation}: any) {
   const [isMonPress, setisMonPress] = useState<Boolean>(false);
   const [isFonPress, setisFonPress] = useState<Boolean>(false);
   let onMpressStyle = isMonPress ? styles.optionbtnOnPress : styles.optionbtn;
@@ -30,7 +30,7 @@ export default function Introduce ({setpage}: any) {
     </TextInput>
 
 
-    <TouchableOpacity style={styles.btn} onPress={() => setpage("addphoto")}>
+    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("AddPhoto")}>
       <Text style={styles.btntxt}>Continue</Text>
     </TouchableOpacity>
 
