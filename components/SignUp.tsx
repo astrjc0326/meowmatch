@@ -1,10 +1,9 @@
 import React, {Component, useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import LOGOSVG from "../assets/Logo";
 import RightLogo from "../assets/RightLogo";
 import LeftLogo from "../assets/LeftLogo";
 import tw from 'twrnc';
-
 
 
 export default function LogIn ({navigation}: any) {
@@ -13,7 +12,7 @@ export default function LogIn ({navigation}: any) {
       <RightLogo style={tw`absolute left-0 top-20`} />
       <LeftLogo style={tw`absolute right-0 top-20`} />
       <LOGOSVG style={tw`absolute top-10`} />
-      <Text style={[tw`text-3xl font-bold mb-8`, { color: '#b0c5c5'} ]}>MeowMatch</Text>
+      <Text style={[tw`text-5xl font-bold mb-8`, { color: '#b0c5c5'} ]}>MeowMatch</Text>
 
       <View style={tw`items-center`}>
 
@@ -39,79 +38,3 @@ export default function LogIn ({navigation}: any) {
     );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1, //flex-1
-//     backgroundColor: "#e9f5f5",
-//     alignItems: "center", // align-center
-//     justifyContent: "center", // items-center
-//   },
-//   title: {
-//     alignContent: "center",
-//     textAlign: "center",
-//     width: "90%",
-//     padding: "1%",
-//     color: "#b0c5c5",
-//     fontSize: 55,
-//     fontWeight: "700",
-//     position: "absolute",
-//     top: "35%"
-//   },
-//   logo: {
-//     position: "absolute",
-//     top: "10%"
-//   },
-//   rightlogo: {
-//     position: "absolute",
-//     left: 0,
-//     top: "20%"
-//   },
-//   leftlogo: {
-//     position: "absolute",
-//     right: 0,
-//     top: "20%"
-//   },
-//   login: {
-//     alignItems: "center",
-//     position: "absolute",
-//     bottom: "20%",
-//   },
-//   otherbtn:{
-//     // position: "absolute",
-//     // bottom: "25%"
-//   },
-//   row: {
-//     flexDirection: 'row'
-//   }
-//   ,
-//   otheroption: {
-//     fontWeight: "600",
-//     color: "#b0c5c5",
-//   },
-//   fbbtn: {
-//     // position: "absolute",
-//     // bottom: "30%",
-//     width: "95%",
-//     backgroundColor:'#e8e5e5',
-//     borderRadius: 30,
-//     marginTop: 30,
-//     marginHorizontal: 20,
-
-//   },
-//   fbbtntext: {
-//     fontWeight: "600",
-//     borderRadius: 30,
-//     marginVertical: 15,
-//     marginHorizontal: 85,
-//   },
-//   term: {
-//     color: "#b0c5c5",
-//     fontWeight: "300",
-//     textDecorationLine: "underline",
-//   },
-//   announce: {
-//     color: "#b0c5c5",
-//     fontWeight: "500",
-//     marginTop: 40
-//   }
-// });
