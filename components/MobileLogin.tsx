@@ -19,7 +19,7 @@ export default function MobileLogin( {navigation}: any ) {
       </View>
 
       <TouchableOpacity style={[tw`absolute top-35 rounded-3xl py-3 px-12 mt-3`,{ backgroundColor: '#e9f5f5'}]} onPress={() => navigation.navigate("Introduce")}>
-        <Text style={tw`text-xl font-semibold text-gray-200`}>Continue</Text>
+        <Text style={tw`text-m font-semibold text-gray-600`}>Continue</Text>
       </TouchableOpacity>
       </View>
     </View>
