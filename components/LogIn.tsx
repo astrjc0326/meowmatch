@@ -35,10 +35,10 @@ export default function LogIn ({ navigation }: any) {
         <TextInput style={tw` p-3 mx-30  w-1/4 text-lg h-auto`}onChangeText={handleUserNameOnChange} placeholder='username'></TextInput>
         <TextInput style={tw`p-3 mx-30 w-1/4 text-lg h-auto`} onChangeText={handlePasswordOnChange} placeholder='password' secureTextEntry={true} ></TextInput>
 
-      <TouchableOpacity style={tw`p-35 bg-gray-200 rounded-lg py-3 mb-2 mt-2`} onPress={handleLoginInOnPress}>
+      <TouchableOpacity style={tw`w-3/4 p-35 bg-gray-200 rounded-lg py-3 mb-2 mt-2`} onPress={handleLoginInOnPress}>
           <Text style={tw`text-center`}>Log In</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={tw`p-35 bg-gray-200 rounded-lg py-3 mb-2 `} onPress={handleSignUpOnPress}>
+        <TouchableOpacity style={tw`w-3/4 p-35 bg-gray-200 rounded-lg py-3 mb-2 `} onPress={handleSignUpOnPress}>
           <Text style={tw`text-center`}>Sign Up</Text>
         </TouchableOpacity>
 
