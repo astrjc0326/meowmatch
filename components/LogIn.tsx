@@ -3,7 +3,6 @@ import { Text, View, TouchableOpacity, TextInput} from 'react-native';
 import LOGOSVG from "../assets/Logo";
 import RightLogo from "../assets/RightLogo";
 import LeftLogo from "../assets/LeftLogo";
-// import tw from 'twrnc';
 import tw from './lib/tailwind';
 
 
