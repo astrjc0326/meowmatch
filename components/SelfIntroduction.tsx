@@ -1,67 +1,28 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, TextInput, StyleSheet} from 'react-native';
 import styles from '../assets/styles'
+import tw from 'twrnc'
 
 export default function SelfIntroduction({navigation}: any) {
   return (
-  <View style={stylesheet.container}>
-    <Text style={{...stylesheet.heading}}>Introduce Yourself</Text>
-    <Text style={styles.description}>What do you like to do...</Text>
-    <TextInput style={stylesheet.txtinput}
+  <View style={tw`align-center flex-1 items-center w-screen`}>
+    <Text style={tw`mt-10 pl-4 text-2xl text-gray-400 font-semibold text-center`}>Introduce Yourself</Text>
+    <Text style={tw`py-2 text-base align-center text-gray-400`}>What do you like to do...</Text>
+    <TextInput style={tw`w-3/4 border-2 border-gray-400	`}
     multiline={true}
     numberOfLines={5}/>
-    <TouchableOpacity style={styles.btn}>
-      <Text style={styles.btntxt} onPress={() => navigation.navigate('Home')}>
+    <TouchableOpacity style={[tw`rounded-lg w-3/4 mt-2`, { backgroundColor: "#e9f5f5" }]}>
+      <Text style={tw`w-full font-semibold text-center rounded-full my-3`} onPress={() => navigation.navigate('Home')}>
         Continue
       </Text>
     </TouchableOpacity>
-    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Home')}>
-      <Text style={styles.btntxt}>
+    <TouchableOpacity style={[tw`rounded-lg w-3/4 mt-2`, { backgroundColor: "#e9f5f5" }]} onPress={() => navigation.navigate('Home')}>
+      <Text style={tw`-full font-semibold text-center rounded-full my-3`}>
         Skip
       </Text>
     </TouchableOpacity>
-    <View style={{flex: 5}}></View>
+    <View style={tw`flex-5`}></View>
   </View>
   )
 }
 
-const stylesheet = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 12,
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
-  heading: {
-    marginTop: 40,
-    paddingLeft: 10,
-    fontSize: 25,
-    color: '#b0c5c5',
-    fontWeight: '600',
-    textAlign: 'center'
-  },
-  txtinput: {
-    borderColor: 'grey',
-    borderStyle: 'solid',
-    borderWidth: 3,
-    width: "100%",
-    flex: 2,
-    marginVertical: 10,
-  },
-  btn: {
-    backgroundColor: "#c9eded",
-    borderRadius: 120,
-    width: '90%',
-    marginVertical: 4
-  },
-  btntxt: {
-    width: "100%",
-    fontWeight: "600",
-    textAlign: "center",
-    borderRadius: 30,
-    marginVertical: 15,
-    color: 'white',
-
-  }
-
-})
