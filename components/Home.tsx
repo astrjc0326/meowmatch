@@ -10,7 +10,6 @@ import Chat from "./Chat";
 import Like from "./Like";
 import tw from "../lib/tailwind";
 
-
 export default function Home() {
   const [page, setPage] = useState("profile");
   const [profileonclick, profilesetonclick] = useState(true);

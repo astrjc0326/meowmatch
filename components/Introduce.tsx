@@ -12,7 +12,7 @@ export default function Introduce({ navigation }: any) {
   const [isMonPress, setisMonPress] = useState<Boolean>(false);
   const [isFonPress, setisFonPress] = useState<Boolean>(false);
   const optionbtnOnPress = tw`py-1 px-2 border-2 border-gray-600 rounded-xl my-2 bg-primary `;
-  const optionbtn = tw`py-1 px-2 border-1 border-gray-400 rounded-xl my-2 bg-white`
+  const optionbtn = tw`py-1 px-2 border-1 border-gray-400 rounded-xl my-2 bg-white`;
   let onMpressStyle = isMonPress ? optionbtnOnPress : optionbtn;
   let onFpressSytle = isFonPress ? optionbtnOnPress : optionbtn;
   useEffect(() => {}, [isMonPress]);
@@ -63,13 +63,17 @@ export default function Introduce({ navigation }: any) {
           style={tw`h-12 text-lg my-1 py-1 px-2 border border-gray-400 rounded-lg`}
         ></TextInput>
         <View style={tw`items-center w-full mt-3`}>
-        <TouchableOpacity
-          style={tw`w-full rounded-3xl bg-primary `}
-          onPress={() => navigation.navigate("AddPhoto")}
-        >
-          <Text style={tw`text-center text-base font-semibold text-gray-600 my-3
-          `}>Continue</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={tw`w-full rounded-3xl bg-primary `}
+            onPress={() => navigation.navigate("AddPhoto")}
+          >
+            <Text
+              style={tw`text-center text-base font-semibold text-gray-600 my-3
+          `}
+            >
+              Continue
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

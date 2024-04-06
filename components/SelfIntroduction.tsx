@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  TextInput,
-} from "react-native";
+import { View, TouchableOpacity, Text, TextInput } from "react-native";
 import tw from "../lib/tailwind";
 
 export default function SelfIntroduction({ navigation }: any) {
