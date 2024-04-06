@@ -28,7 +28,7 @@ export default function Profile() {
         </View>
       </View>
       <View style={tw`flex-3 mt-5 flex-col items-center`}>
-      <View style={tw`flex-row items-center algin-center content-center`}>
+      <View style={tw`flex-row items-center content-center`}>
         <Text style={tw`text-3xl text-bold text-gray-600`}>Ddangkong</Text>
         <Text style={tw`text-xl ml-3 text-gray-500`}>3y3m</Text>
       </View>
