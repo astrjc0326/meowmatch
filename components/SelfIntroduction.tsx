@@ -4,9 +4,8 @@ import {
   TouchableOpacity,
   Text,
   TextInput,
-  StyleSheet,
 } from "react-native";
-import tw from "./lib/tailwind";
+import tw from "../lib/tailwind";
 
 export default function SelfIntroduction({ navigation }: any) {
   return (

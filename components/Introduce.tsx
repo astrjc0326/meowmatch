@@ -6,20 +6,21 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-import tw from "./lib/tailwind";
+import tw from "../lib/tailwind";
 
 export default function Introduce({ navigation }: any) {
   const [isMonPress, setisMonPress] = useState<Boolean>(false);
   const [isFonPress, setisFonPress] = useState<Boolean>(false);
-  const optionbtnOnPress = tw`py-1 px-2 border-primary rounded-md my-2 bg-primary`;
-  let onMpressStyle = isMonPress ? optionbtnOnPress : styles.optionbtn;
-  let onFpressSytle = isFonPress ? optionbtnOnPress : styles.optionbtn;
+  const optionbtnOnPress = tw`py-1 px-2 border-2 border-gray-600 rounded-xl my-2 bg-primary `;
+  const optionbtn = tw`py-1 px-2 border-1 border-gray-400 rounded-xl my-2 bg-white`
+  let onMpressStyle = isMonPress ? optionbtnOnPress : optionbtn;
+  let onFpressSytle = isFonPress ? optionbtnOnPress : optionbtn;
   useEffect(() => {}, [isMonPress]);
 
   return (
     <View style={tw`flex-1 content-center items-center algin-center w-screen`}>
       <Text
-        style={tw`text-center content-center w-full text-gray-400 text-2xl font-semibold my-10 pt-2`}
+        style={tw`text-center content-center w-full text-gray-400 text-2xl font-semibold mt-10 pt-2`}
       >
         Introduce yourself!
       </Text>
@@ -35,7 +36,7 @@ export default function Introduce({ navigation }: any) {
             setisMonPress(false);
           }}
         >
-          <Text style={tw`text-lg text-gray-400 text-bold`}>Femeow</Text>
+          <Text style={tw`text-lg text-gray-400`}>Femeow</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={onMpressStyle}
@@ -61,13 +62,15 @@ export default function Introduce({ navigation }: any) {
           maxLength={20}
           style={tw`h-12 text-lg my-1 py-1 px-2 border border-gray-400 rounded-lg`}
         ></TextInput>
-
+        <View style={tw`items-center w-full mt-3`}>
         <TouchableOpacity
-          style={styles.btn}
+          style={tw`w-full rounded-3xl bg-primary `}
           onPress={() => navigation.navigate("AddPhoto")}
         >
-          <Text style={tw`btntxt`}>Continue</Text>
+          <Text style={tw`text-center text-base font-semibold text-gray-600 my-3
+          `}>Continue</Text>
         </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
