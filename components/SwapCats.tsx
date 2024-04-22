@@ -47,7 +47,7 @@ export default function SwapCats() {
         />
       </View>
       <View style={tw`flex-3`}>
-        <Text style={tw`text-bold text-gray-500 text-xl text-center`}>
+        <Text style={tw`font-bold text-gray-500 text-xl text-center`}>
           Meowow
         </Text>
       </View>
