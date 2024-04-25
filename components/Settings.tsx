@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ScrollView, View, Text, TouchableOpacity, Switch } from "react-native";
+// import GenderEntry from "./GenderEntry";
 import Slider from "@react-native-community/slider";
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
 import tw from "../lib/tailwind";
@@ -10,11 +11,13 @@ export default function Setting() {
   const [isEnabled, setIsEnabled] = useState(false);
   const [distance, setDistance] = useState(0);
   const [values, setValues] = useState([0, 100]);
-
+  const [gender, setGender] = useState('Meow&Femeow')
   const multiSliderValuesChange = (values: number[]) => {
     setValues(values);
   };
-
+  const genderOnPress = (gender: string) => {
+    setGender(gender)
+  }
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   const profilebtn = isProfileOnClick
@@ -91,7 +94,7 @@ export default function Setting() {
               {Math.round(distance)} miles
             </Text>
           </View>
-          <View style={tw`flex-1 justify-center items-center`}>
+          <View style={tw`flex-1 justify-center items-center m-2`}>
             <Slider
               style={tw`w-full`}
               minimumValue={0}
@@ -145,7 +148,34 @@ export default function Setting() {
           </View>
           <View style={tw`w-full border-2 border-gray-400`}></View>
         </View>
-        <View></View>
+        <View style={tw`mt-2`}>
+          <View style={tw`flex flex-row justify-between`}>
+          <Text style={tw`text-lg font-semibold text-gray-600`}>Show</Text>
+          <Text style={tw`text-lg font-semibold text-gray-600`}>{gender}</Text>
+          </View>
+          <View>
+    <View style={tw`w-full border-2 border-gray-400`}></View>
+    <View style={tw`bg-white`}>
+      <TouchableOpacity onPress={() => genderOnPress('Meow')} >
+        <Text style={tw`text-lg font-semibold text-gray-600`}>Meow</Text>
+      </TouchableOpacity>
+    </View>
+    </View>
+          <View style={tw`w-full border-2 border-gray-400`}></View>
+          <View style={tw`bg-white`}>
+            <TouchableOpacity onPress={() => genderOnPress('Femeow')}>
+              <Text style={tw`text-lg font-semibold text-gray-600`}>Femeow</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={tw`w-full border-2 border-gray-400`}></View>
+          <View style={tw`bg-white`}>
+            <TouchableOpacity onPress={() => genderOnPress('Friends')} >
+              <Text style={tw`text-lg font-semibold text-gray-600`}>Friends</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={tw`w-full border-2 border-gray-400`}></View>
+
+        </View>
       </ScrollView>
     </View>
   );

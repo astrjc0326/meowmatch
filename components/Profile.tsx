@@ -39,7 +39,7 @@ export default function Profile() {
       </View>
       <View style={tw`flex-3 mt-5 flex-col items-center`}>
         <View style={tw`flex-row items-center content-center`}>
-          <Text style={tw`text-3xl font-bold text-gray-600`}>Ddangkong</Text>
+          <Text style={tw`text-3xl font-bold text-gray-600 mt-10`}>Ddangkong</Text>
           <Text style={tw`text-xl ml-3 text-gray-500`}>3y3m</Text>
         </View>
         <View style={tw`p-2 mx-2`}>
