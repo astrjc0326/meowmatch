@@ -6,12 +6,11 @@ import MultiSlider from "@ptomasroos/react-native-multi-slider";
 import tw from "../lib/tailwind";
 
 export default function Setting() {
-  const [isProfileOnClick, profileOnClick] = useState(true);
-  const [isSettingOnClick, settingOnClick] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);
   const [distance, setDistance] = useState(0);
   const [values, setValues] = useState([0, 100]);
-  const [gender, setGender] = useState('Meow&Femeow')
+  const [gender, setGender] = useState('Meow&Femeow');
+  const [showOnPress, setShowOnPress] = useState({meow:false, femeow: false, friends: false})
   const multiSliderValuesChange = (values: number[]) => {
     setValues(values);
   };
@@ -20,40 +19,10 @@ export default function Setting() {
   }
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
-  const profilebtn = isProfileOnClick
-    ? "bg-white text-themecolor"
-    : "bg-themecolor text-white";
-  const settingbtn = isSettingOnClick
-    ? "bg-white text-themecolor"
-    : "bg-themecolor text-white";
+  const onPress = "bg-themecolor text-white"
+  const notOnPress  = "bg-white text-gray-600"
   return (
     <View style={tw`flex-1 bg-primary`}>
-      <View
-        style={tw`flex-1 mt-12 mx-4 bg-themecolor rounded-xl flex-row justify-around items-center rounded-full`}
-      >
-        <TouchableOpacity
-          style={tw`px-10 py-2 rounded-full ${profilebtn}`}
-          onPress={() => {
-            profileOnClick(true);
-            settingOnClick(false);
-          }}
-        >
-          <Text style={tw`text-white font-semibold text-lg ${profilebtn}`}>
-            Profile
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={tw`px-10 py-2 rounded-full ${settingbtn}`}
-          onPress={() => {
-            settingOnClick(true);
-            profileOnClick(false);
-          }}
-        >
-          <Text style={tw`text-white font-semibold text-lg ${settingbtn}`}>
-            Setting
-          </Text>
-        </TouchableOpacity>
-      </View>
       <View style={tw`h-2`} />
       <ScrollView
         style={tw`flex-12`}
@@ -156,20 +125,27 @@ export default function Setting() {
           <View>
     <View style={tw`w-full border-2 border-gray-400`}></View>
     <View style={tw`bg-white`}>
-      <TouchableOpacity onPress={() => genderOnPress('Meow')} >
+      <TouchableOpacity style={showOnPress.meow ? tw`${onPress}` : tw`${notOnPress}`} onPress={() => {
+        genderOnPress('Meow')
+        setShowOnPress({...showOnPress, meow: true, femeow: false, friends: false})
+        }} >
         <Text style={tw`text-lg font-semibold text-gray-600`}>Meow</Text>
       </TouchableOpacity>
     </View>
     </View>
           <View style={tw`w-full border-2 border-gray-400`}></View>
           <View style={tw`bg-white`}>
-            <TouchableOpacity onPress={() => genderOnPress('Femeow')}>
+            <TouchableOpacity style={showOnPress.femeow ? tw`${onPress}` : tw`${notOnPress}`}onPress={() => {
+              genderOnPress('Femeow');
+              setShowOnPress({...showOnPress, femeow: true, meow: false, friends: false})}}>
               <Text style={tw`text-lg font-semibold text-gray-600`}>Femeow</Text>
             </TouchableOpacity>
           </View>
           <View style={tw`w-full border-2 border-gray-400`}></View>
           <View style={tw`bg-white`}>
-            <TouchableOpacity onPress={() => genderOnPress('Friends')} >
+            <TouchableOpacity style={showOnPress.friends ? tw`${onPress}` : tw`${notOnPress}`} onPress={() => {genderOnPress('Friends')
+              setShowOnPress({...showOnPress, friends: true, meow: false, femeow: false})
+            }} >
               <Text style={tw`text-lg font-semibold text-gray-600`}>Friends</Text>
             </TouchableOpacity>
           </View>
