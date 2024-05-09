@@ -15,6 +15,9 @@ export default function AddPhoto ({setpage}: any) {
       <TouchableOpacity style={styles.btn} onPress={() => setpage("profilecamer")}>
         <Text style={styles.btntxt}>Add a photo</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.btn} onPress={() => setpage("selfintroduction")}>
+        <Text style={styles.btntxt}>Skip</Text>
+      </TouchableOpacity>
     </View>
   )
 }

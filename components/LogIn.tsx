@@ -75,8 +75,7 @@ const styles = StyleSheet.create({
     bottom: "20%",
   },
   otherbtn:{
-    // position: "absolute",
-    // bottom: "25%"
+    paddingTop: '5%'
   },
   row: {
     flexDirection: 'row'

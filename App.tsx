@@ -1,18 +1,20 @@
-import React, {Component} from 'react';
-import { SafeAreaView } from 'react-native';
-
+import React from 'react';
 import { useState, useEffect } from 'react'
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import LogIn from './components/LogIn';
 import MobileLogin from './components/MobileLogin';
 import Introduce from './components/Introduce';
-
+import Settings from './components/Settings';
+import AddPhoto from './components/AddPhoto';
+import ProfileCamera from './components/ProfileCamera';
+import SelfIntroduction from './components/SelfIntroduction';
+import Home from './components/Home';
 
 export default function App () {
-  const [page, setpage] = useState<string>('homelogin');
+  const [page, setpage] = useState<string>('home');
   useEffect(() => {}, [page])
-  let currPage = <LogIn setpage={setpage}/>
+  // let currPage = <LogIn setpage = {setpage} />
+  let currPage = <Home />
   switch(page) {
     case ("homelogin"):
       currPage = <LogIn setpage={setpage}/>
@@ -22,6 +24,21 @@ export default function App () {
       break;
     case ("introduce"):
       currPage = <Introduce setpage={setpage}/>
+      break;
+    case ("settings"):
+      currPage = <Settings />
+      break;
+    case("addphoto"):
+      currPage = <AddPhoto setpage={setpage}/>
+      break;
+    case("profilecamer"):
+      currPage = <ProfileCamera />
+      break;
+    case("selfintroduction"):
+      currPage = <SelfIntroduction setpage={setpage}/>
+      break;
+    case("home"):
+      currPage= <Home />
       break;
   }
   useEffect(() => {

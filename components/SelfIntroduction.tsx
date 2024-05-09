@@ -1,17 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity, Text, TextInput, StyleSheet} from 'react-native';
 import styles from '../assets/styles'
 
 export default function SelfIntroduction({setpage}: any) {
+  const [selfintro, setselfintro] = useState('')
   return (
   <View style={stylesheet.container}>
     <Text style={{...stylesheet.heading}}>Introduce Yourself</Text>
     <Text style={styles.description}>What do you like to do...</Text>
     <TextInput style={stylesheet.txtinput}
     multiline={true}
-    numberOfLines={5}/>
+    numberOfLines={5}
+    value={selfintro}
+    onChangeText={setselfintro}
+    />
     <TouchableOpacity style={styles.btn}>
-      <Text style={styles.btntxt} onPress={() => setpage('home')}>
+      <Text style={styles.btntxt} onPress={
+        (e) => {
+          setpage('home')
+        }}>
         Continue
       </Text>
     </TouchableOpacity>
