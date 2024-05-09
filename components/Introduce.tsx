@@ -20,14 +20,14 @@ export default function Introduce({ navigation }: any) {
   return (
     <View style={tw`flex-1 content-center items-center algin-center w-screen`}>
       <Text
-        style={tw`text-center content-center w-full text-gray-400 text-2xl font-semibold mt-10 pt-2`}
+        style={tw`text-center content-center text-gray-400 text-2xl font-semibold mt-10 pt-2`}
       >
         Introduce yourself!
       </Text>
       <Text style={tw`text-gray-600 my-2 text-base text-center`}>
         Fill out the rest of your details so meows know a little more about you.
       </Text>
-      <View style={tw`align-left w-full px-3`}>
+      <View style={tw`align-left px-3`}>
         <Text style={tw`my-2 text-lg text-gray-400`}>I identify as a ....</Text>
         <TouchableOpacity
           style={onFpressSytle}
@@ -36,7 +36,7 @@ export default function Introduce({ navigation }: any) {
             setisMonPress(false);
           }}
         >
-          <Text style={tw`text-lg text-gray-400`}>Femeow</Text>
+          <Text style={tw`text-lg font-bold text-gray-400`}>Femeow</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={onMpressStyle}
@@ -45,9 +45,9 @@ export default function Introduce({ navigation }: any) {
             setisFonPress(false);
           }}
         >
-          <Text style={tw`text-bold text-gray-400 text-lg`}>Meow</Text>
+          <Text style={tw`font-bold text-gray-400 text-lg`}>Meow</Text>
         </TouchableOpacity>
-        <Text style={tw`text-bold text-gray-400 text-lg`}>Birthday</Text>
+        <Text style={tw`font-bold text-gray-400 text-lg`}>Birthday</Text>
         <TextInput
           placeholder="MM/DD/YYYY"
           keyboardType="numeric"
@@ -55,16 +55,16 @@ export default function Introduce({ navigation }: any) {
           maxLength={8}
           style={tw`h-12 text-lg my-1 py-1 px-2 border border-gray-400 rounded-lg`}
         ></TextInput>
-        <Text style={tw`text-bold text-gray-400 text-lg`}>Name</Text>
+        <Text style={tw`font-bold text-gray-400 text-lg`}>Name</Text>
         <TextInput
           placeholder="Add your first name"
           placeholderTextColor="#DEDADA"
           maxLength={20}
           style={tw`h-12 text-lg my-1 py-1 px-2 border border-gray-400 rounded-lg`}
         ></TextInput>
-        <View style={tw`items-center w-full mt-3`}>
+        <View style={tw`items-center mt-3`}>
           <TouchableOpacity
-            style={tw`w-full rounded-3xl bg-primary `}
+            style={tw` rounded-3xl bg-primary `}
             onPress={() => navigation.navigate("AddPhoto")}
           >
             <Text

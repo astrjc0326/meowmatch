@@ -4,7 +4,7 @@ import tw from "../lib/tailwind";
 
 export default function SelfIntroduction({ navigation }: any) {
   return (
-    <View style={tw`align-center flex-1 items-center w-screen`}>
+    <View style={tw`items-center flex-1 items-center w-screen`}>
       <Text
         style={tw`mt-10 pl-4 text-2xl text-gray-400 font-semibold text-center`}
       >

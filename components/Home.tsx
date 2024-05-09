@@ -10,7 +10,7 @@ import Chat from "./Chat";
 import Like from "./Like";
 import tw from "../lib/tailwind";
 
-export default function Home() {
+export default function Home({navigation}: any) {
   const [page, setPage] = useState("profile");
   const [profileonclick, profilesetonclick] = useState(true);
   const [swaponclick, swapsetonclick] = useState(false);
@@ -18,7 +18,9 @@ export default function Home() {
   const [likeonclick, likesetonclick] = useState(false);
   useEffect(() => {}, [profileonclick]);
   let currpage = <Profile />;
-
+  const handleLogoutOnPress = () => {
+    navigation.navigate('LoginIn')
+  }
   switch (page) {
     case "profile":
       currpage = <Profile />;
@@ -33,7 +35,12 @@ export default function Home() {
       currpage = <Like />;
   }
   return (
-    <View style={tw`flex-1 items-center pt-18 bg-primary`}>
+    <View style={tw`flex-1 items-center pt-10 bg-primary`}>
+      <View style={tw`px-2 items-end w-full`}>
+      <TouchableOpacity onPress={handleLogoutOnPress}>
+        <Text>Logout</Text>
+      </TouchableOpacity>
+      </View>
       {currpage}
       <View style={tw`flex-row justify-around absolute bottom-10`}>
         <TouchableOpacity

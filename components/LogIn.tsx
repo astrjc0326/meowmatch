@@ -33,7 +33,7 @@ export default function LogIn({ navigation }: any) {
           MeowMatch
         </Text>
       </View>
-      <View style={tw`items-center w-full flex-3 p-4`}>
+      <View style={tw`flex-1 items-center w-full flex-3 p-4 pt-10`}>
         <TextInput
           style={tw`px-2 mx-30  w-3/4 text-base h-11  text-left border-2 border-gray-200 rounded-lg bg-white  justify-center`}
           onChangeText={handleUserNameOnChange}
